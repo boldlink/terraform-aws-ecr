@@ -86,8 +86,6 @@ EOF
 
 }
 
-
-
 output "example" {
   value = [
     module.ecr,

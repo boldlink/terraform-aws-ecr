@@ -49,7 +49,6 @@ variable "create_aws_ecr_repository_policy" {
 variable "aws_ecr_repository_policy" {
   description = "(Required) The policy document. This is a JSON formatted string."
   type        = string
-  default     = ""
 }
 
 variable "create_aws_ecr_lifecycle_policy" {
@@ -61,5 +60,4 @@ variable "create_aws_ecr_lifecycle_policy" {
 variable "aws_ecr_lifecycle_policy" {
   description = "(Required) The policy document. This is a JSON formatted string.."
   type        = string
-  default     = ""
 }
