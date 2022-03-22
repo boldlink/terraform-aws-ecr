@@ -122,7 +122,6 @@ variable "enable_pull_through_cache_rule" {
   description = "whether to enable pull through cache rule"
   type        = bool
   default     = false
-
 }
 
 variable "ecr_repository_prefix" {

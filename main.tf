@@ -43,8 +43,6 @@ resource "aws_ecr_replication_configuration" "this" {
       }
     }
   }
-
-
 }
 
 # Scanning configuration
@@ -62,7 +60,6 @@ resource "aws_ecr_registry_scanning_configuration" "this" {
         filter      = lookup(repository_filter.value, "filter", "*")
         filter_type = lookup(repository_filter.value, "filter_type", "WILDCARD")
       }
-
     }
   }
 
