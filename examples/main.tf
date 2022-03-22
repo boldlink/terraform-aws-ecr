@@ -33,6 +33,13 @@ locals {
   ]
 }
 
+data "aws_caller_identity" "current" {}
+
+data "aws_region" "current" {}
+
+data "aws_partition" "current" {}
+
+
 module "kms_key" {
   source              = "boldlink/kms-key/aws"
   version             = "1.0.0"
@@ -43,10 +50,16 @@ module "kms_key" {
 }
 
 module "ecr" {
-  source               = "./../"
-  name                 = local.name
-  image_tag_mutability = "IMMUTABLE"
-
+  source                           = "./../"
+  name                             = local.name
+  image_tag_mutability             = "IMMUTABLE"
+  create_replication_configuration = true
+  scan_type                        = "ENHANCED"
+  enable_pull_through_cache_rule   = true
+  ecr_repository_prefix            = "ecr-public"
+  upstream_registry_url            = "public.ecr.aws"
+  replica_region                   = "eu-west-2"
+  registry_id                      = data.aws_caller_identity.current.account_id
   encryption_configuration = {
     encryption_type = "KMS"
     kms_key         = module.kms_key.arn
@@ -83,6 +96,24 @@ module "ecr" {
     ]
 }
 EOF
+  registry_policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Sid    = "testpolicy",
+        Effect = "Allow",
+        Principal = {
+          "AWS" : "arn:${data.aws_partition.current.partition}:iam::${data.aws_caller_identity.current.account_id}:root"
+        },
+        Action = [
+          "ecr:ReplicateImage"
+        ],
+        Resource = [
+          "arn:${data.aws_partition.current.partition}:ecr:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:repository/*"
+        ]
+      }
+    ]
+  })
 
 }
 
