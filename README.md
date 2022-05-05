@@ -65,5 +65,14 @@ No resources.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_id"></a> [id](#output\_id) | The repository name. |
+| <a name="output_private_arn"></a> [private\_arn](#output\_private\_arn) | Full ARN of the repository. |
+| <a name="output_private_registry_id"></a> [private\_registry\_id](#output\_private\_registry\_id) | The registry ID where the repository was created. |
+| <a name="output_public_arn"></a> [public\_arn](#output\_public\_arn) | Full ARN of the repository. |
+| <a name="output_public_registry_id"></a> [public\_registry\_id](#output\_public\_registry\_id) | The registry ID where the repository was created. |
+| <a name="output_repository_uri"></a> [repository\_uri](#output\_repository\_uri) | The URI of the repository. |
+| <a name="output_repository_url"></a> [repository\_url](#output\_repository\_url) | The URL of the repository (in the form aws\_account\_id.dkr.ecr.region.amazonaws.com/repositoryName). |
+| <a name="output_tags_all"></a> [tags\_all](#output\_tags\_all) | A map of tags assigned to the resource, including those inherited from the provider default\_tags |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
