@@ -9,14 +9,14 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.4.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.12.1 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ecr"></a> [ecr](#module\_ecr) | ./../ | n/a |
-| <a name="module_kms_key"></a> [kms\_key](#module\_kms\_key) | boldlink/kms-key/aws | 1.0.0 |
+| <a name="module_kms_key"></a> [kms\_key](#module\_kms\_key) | boldlink/kms/aws | 1.0.0 |
+| <a name="module_private_ecr"></a> [private\_ecr](#module\_private\_ecr) | ./../../ | n/a |
 
 ## Resources
 

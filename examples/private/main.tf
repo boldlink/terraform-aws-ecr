@@ -41,16 +41,17 @@ data "aws_partition" "current" {}
 
 
 module "kms_key" {
-  source              = "boldlink/kms-key/aws"
+  source              = "boldlink/kms/aws"
   version             = "1.0.0"
   description         = "A test kms key"
   name                = "example-key"
-  alias_name          = "alias/my-key-alias"
+  alias_name          = "alias/ecr-key-alias"
   enable_key_rotation = true
 }
 
-module "ecr" {
-  source                           = "./../"
+module "private_ecr" {
+  source                           = "./../../"
+  create_private_repository        = true
   name                             = local.name
   image_tag_mutability             = "IMMUTABLE"
   create_replication_configuration = true
@@ -119,6 +120,6 @@ EOF
 
 output "example" {
   value = [
-    module.ecr,
+    module.private_ecr,
   ]
 }
