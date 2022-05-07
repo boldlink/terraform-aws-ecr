@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/boldlink/terraform-aws-ecr/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/boldlink/terraform-aws-ecr/actions)
+
 ## Description
 
 This module creates an Elastic Container Registry Repository.
