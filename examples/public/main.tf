@@ -1,3 +1,8 @@
+
+terraform {
+  required_version = ">= 0.13"
+}
+
 provider "aws" {
   region = "us-east-1"
 }
@@ -44,6 +49,7 @@ EOF
 }
 
 output "publicecr" {
+  description = "Sample module output"
   value = [
     module.Publicecr,
   ]

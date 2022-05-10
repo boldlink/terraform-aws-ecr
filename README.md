@@ -41,8 +41,8 @@ No resources.
 | <a name="input_aws_ecr_repository_policy"></a> [aws\_ecr\_repository\_policy](#input\_aws\_ecr\_repository\_policy) | (Required) The policy document. This is a JSON formatted string. | `string` | `""` | no |
 | <a name="input_catalog_data"></a> [catalog\_data](#input\_catalog\_data) | (Optional) Catalog data configuration for the repository. | `any` | `[]` | no |
 | <a name="input_continuous_scan_filters"></a> [continuous\_scan\_filters](#input\_continuous\_scan\_filters) | A list of repository filter to scan continuous, Wildcard character is allowed | `list(string)` | `[]` | no |
-| <a name="input_create_aws_ecr_lifecycle_policy"></a> [create\_aws\_ecr\_lifecycle\_policy](#input\_create\_aws\_ecr\_lifecycle\_policy) | Create the lifecyle policy? True or false | `bool` | `true` | no |
-| <a name="input_create_aws_ecr_repository_policy"></a> [create\_aws\_ecr\_repository\_policy](#input\_create\_aws\_ecr\_repository\_policy) | Create the ecr repository policy? True or false | `bool` | `true` | no |
+| <a name="input_create_aws_ecr_lifecycle_policy"></a> [create\_aws\_ecr\_lifecycle\_policy](#input\_create\_aws\_ecr\_lifecycle\_policy) | Create the lifecyle policy? True or false | `bool` | `false` | no |
+| <a name="input_create_aws_ecr_repository_policy"></a> [create\_aws\_ecr\_repository\_policy](#input\_create\_aws\_ecr\_repository\_policy) | Create the ecr repository policy? True or false | `bool` | `false` | no |
 | <a name="input_create_ecrpublic_repository_policy"></a> [create\_ecrpublic\_repository\_policy](#input\_create\_ecrpublic\_repository\_policy) | whether to create ecr public repository policy or not | `bool` | `false` | no |
 | <a name="input_create_private_repository"></a> [create\_private\_repository](#input\_create\_private\_repository) | Whether to create a private repository or not. | `bool` | `false` | no |
 | <a name="input_create_public_repository"></a> [create\_public\_repository](#input\_create\_public\_repository) | Whether to create a public repository or not. | `bool` | `false` | no |
@@ -51,7 +51,7 @@ No resources.
 | <a name="input_enable_pull_through_cache_rule"></a> [enable\_pull\_through\_cache\_rule](#input\_enable\_pull\_through\_cache\_rule) | whether to enable pull through cache rule | `bool` | `false` | no |
 | <a name="input_encryption_configuration"></a> [encryption\_configuration](#input\_encryption\_configuration) | (Optional) Encryption configuration for the repository. | <pre>object({<br>    encryption_type = string<br>    kms_key         = any<br>  })</pre> | <pre>{<br>  "encryption_type": null,<br>  "kms_key": null<br>}</pre> | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment tag, e.g prod, test | `string` | `null` | no |
-| <a name="input_image_tag_mutability"></a> [image\_tag\_mutability](#input\_image\_tag\_mutability) | (Optional) The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE. | `string` | `"MUTABLE"` | no |
+| <a name="input_image_tag_mutability"></a> [image\_tag\_mutability](#input\_image\_tag\_mutability) | (Optional) The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE. | `string` | `"IMMUTABLE"` | no |
 | <a name="input_name"></a> [name](#input\_name) | (Required) Name of the repository. | `string` | n/a | yes |
 | <a name="input_other_tags"></a> [other\_tags](#input\_other\_tags) | Any additional values for tags | `map(string)` | `{}` | no |
 | <a name="input_policy"></a> [policy](#input\_policy) | (Required) The policy document. This is a JSON formatted string. | `string` | `""` | no |

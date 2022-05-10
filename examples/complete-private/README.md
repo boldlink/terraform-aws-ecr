@@ -3,7 +3,9 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 
 ## Providers
 
@@ -34,5 +36,5 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_example"></a> [example](#output\_example) | n/a |
+| <a name="output_private"></a> [private](#output\_private) | Sample module output |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

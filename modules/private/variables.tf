@@ -23,7 +23,7 @@ variable "encryption_configuration" {
 
 variable "image_tag_mutability" {
   description = "(Optional) The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE."
-  default     = "MUTABLE"
+  default     = "IMMUTABLE"
   type        = string
 }
 
@@ -48,7 +48,7 @@ variable "other_tags" {
 variable "create_aws_ecr_repository_policy" {
   description = "Create the ecr repository policy? True or false"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "aws_ecr_repository_policy" {
@@ -60,7 +60,7 @@ variable "aws_ecr_repository_policy" {
 variable "create_aws_ecr_lifecycle_policy" {
   description = "Create the lifecyle policy? True or false"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "aws_ecr_lifecycle_policy" {

@@ -1,4 +1,9 @@
 
+terraform {
+  required_version = ">= 0.13"
+}
+
+
 locals {
   name = "samplerepo"
   tagged_images = [
@@ -60,6 +65,8 @@ module "private_ecr" {
   ecr_repository_prefix            = "ecr-public"
   upstream_registry_url            = "public.ecr.aws"
   replica_region                   = "eu-west-2"
+  create_aws_ecr_repository_policy = true
+  create_aws_ecr_lifecycle_policy  = true
   registry_id                      = data.aws_caller_identity.current.account_id
   encryption_configuration = {
     encryption_type = "KMS"
@@ -76,7 +83,9 @@ module "private_ecr" {
         {
             "Sid": "new policy",
             "Effect": "Allow",
-            "Principal": "*",
+            "Principal": {
+              "AWS" : "arn:${data.aws_partition.current.partition}:iam::${data.aws_caller_identity.current.account_id}:root"
+            },
             "Action": [
                 "ecr:GetDownloadUrlForLayer",
                 "ecr:BatchGetImage",
@@ -118,7 +127,8 @@ EOF
 
 }
 
-output "example" {
+output "private" {
+  description = "Sample module output"
   value = [
     module.private_ecr,
   ]

@@ -1,4 +1,4 @@
-# examples
+# minimum
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -15,7 +15,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_Publicecr"></a> [Publicecr](#module\_Publicecr) | ./../../ | n/a |
+| <a name="module_private_ecr"></a> [private\_ecr](#module\_private\_ecr) | ./../../ | n/a |
 
 ## Resources
 
@@ -27,7 +27,5 @@ No inputs.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_publicecr"></a> [publicecr](#output\_publicecr) | Sample module output |
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
