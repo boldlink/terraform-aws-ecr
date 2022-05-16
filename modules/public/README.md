@@ -19,7 +19,7 @@ Example available [here](https://github.com/boldlink/terraform-aws-ecr-public/tr
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.11 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 4.12.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0.0 |
 
 ## Providers
 
@@ -35,8 +35,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_ecrpublic_repository.this](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecrpublic_repository) | resource |
-| [aws_ecrpublic_repository_policy.this](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecrpublic_repository_policy) | resource |
+| [aws_ecrpublic_repository.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecrpublic_repository) | resource |
+| [aws_ecrpublic_repository_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecrpublic_repository_policy) | resource |
 
 ## Inputs
 

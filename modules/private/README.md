@@ -15,7 +15,7 @@ Example available [here](https://github.com/boldlink/terraform-aws-ecr/tree/main
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.11 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 4.12.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0.0 |
 
 ## Providers
 
@@ -31,13 +31,13 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_ecr_lifecycle_policy.this](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecr_lifecycle_policy) | resource |
-| [aws_ecr_pull_through_cache_rule.this](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecr_pull_through_cache_rule) | resource |
-| [aws_ecr_registry_policy.name](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecr_registry_policy) | resource |
-| [aws_ecr_registry_scanning_configuration.this](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecr_registry_scanning_configuration) | resource |
-| [aws_ecr_replication_configuration.this](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecr_replication_configuration) | resource |
-| [aws_ecr_repository.this](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecr_repository) | resource |
-| [aws_ecr_repository_policy.this](https://registry.terraform.io/providers/hashicorp/aws/4.12.1/docs/resources/ecr_repository_policy) | resource |
+| [aws_ecr_lifecycle_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_lifecycle_policy) | resource |
+| [aws_ecr_pull_through_cache_rule.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_pull_through_cache_rule) | resource |
+| [aws_ecr_registry_policy.name](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_registry_policy) | resource |
+| [aws_ecr_registry_scanning_configuration.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_registry_scanning_configuration) | resource |
+| [aws_ecr_replication_configuration.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_replication_configuration) | resource |
+| [aws_ecr_repository.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
+| [aws_ecr_repository_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository_policy) | resource |
 
 ## Inputs
 
