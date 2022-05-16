@@ -1,12 +1,8 @@
 
-terraform {
-  required_version = ">= 0.13"
-}
-
 provider "aws" {
   region = "us-east-1"
 }
-module "Publicecr" {
+module "public_ecr" {
   source                   = "./../../"
   create_public_repository = true
   name                     = "samplepublicrepository"
@@ -46,11 +42,4 @@ module "Publicecr" {
     ]
 }
 EOF
-}
-
-output "publicecr" {
-  description = "Sample module output"
-  value = [
-    module.Publicecr,
-  ]
 }

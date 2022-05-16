@@ -180,4 +180,3 @@ variable "policy" {
   type        = string
   default     = ""
 }
-

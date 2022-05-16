@@ -6,6 +6,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0.0 |
 
 ## Providers
 
@@ -15,7 +16,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_Publicecr"></a> [Publicecr](#module\_Publicecr) | ./../../ | n/a |
+| <a name="module_public_ecr"></a> [public\_ecr](#module\_public\_ecr) | ./../../ | n/a |
 
 ## Resources
 
@@ -29,5 +30,5 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_publicecr"></a> [publicecr](#output\_publicecr) | Sample module output |
+| <a name="output_public_ecr"></a> [public\_ecr](#output\_public\_ecr) | Sample module output |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
