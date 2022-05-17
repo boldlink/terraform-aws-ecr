@@ -16,12 +16,19 @@ Here we have merged both ECR private and public module to one.
 - minimum and complete examples
 - `CHANGELOG.md` file
 - `CODEOWNERS` file
--
+- PR template file
+- README footers
 
 ### Changed
 
 - ECR private module to sub-module
+- Terraform file to versions file
+- Testing terraform binary to version `0.14.11`
 
+### Fixed
+
+- `pre-commit.yml` file
+- `pre-commit-config.yaml` file
 
 ## [1.0.2] - 2022-05-06
 
@@ -34,4 +41,7 @@ Here we have merged both ECR private and public module to one.
 ### Added
 
 - Added code for ECR private repository
+- Replication configuration resource
+- Scanning configuration resource
+- Registry and lifecycle policies.
 - Initial commit

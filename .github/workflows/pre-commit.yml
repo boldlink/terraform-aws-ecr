@@ -1,10 +1,14 @@
-
 name: pre-commit
 
 on:
-  pull_request:
   push:
-    branches: [main]
+    branches:
+      - '!main'
+      - '!master'
+      - 'fixes/**'
+      - 'feature/**'
+      - 'hotfix/**'
+      - 'releases/**'
 
 env:
   TF_VER: "0.14.11"

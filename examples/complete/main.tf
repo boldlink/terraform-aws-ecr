@@ -1,11 +1,6 @@
 
-terraform {
-  required_version = ">= 0.13"
-}
-
-
 locals {
-  name = "samplerepo"
+  name = "example-complete-repository"
   tagged_images = [
     {
       rulePriority = 1,

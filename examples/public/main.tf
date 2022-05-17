@@ -5,7 +5,7 @@ provider "aws" {
 module "public_ecr" {
   source                   = "./../../"
   create_public_repository = true
-  name                     = "samplepublicrepository"
+  name                     = "example-public-repository"
   catalog_data = {
     catalog_data = {
       architectures     = ["ARM"]

@@ -15,7 +15,7 @@ Example(s) available [here](https://github.com/boldlink/terraform-aws-ecr/tree/m
 module "private_ecr" {
   source                    = "./../../"
   create_private_repository = true
-  name                      = "samplerepo"
+  name                      = "example-minimum"
 }
 
 ```
@@ -94,12 +94,13 @@ No resources.
 | <a name="output_repository_url"></a> [repository\_url](#output\_repository\_url) | The URL of the repository (in the form aws\_account\_id.dkr.ecr.region.amazonaws.com/repositoryName). |
 | <a name="output_tags_all"></a> [tags\_all](#output\_tags\_all) | A map of tags assigned to the resource, including those inherited from the provider default\_tags |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Third party software
 This repository uses third party software:
 * [pre-commit](https://pre-commit.com/) - Used to help ensure code and documentation consistency
   * Install with `brew install pre-commit`
   * Manually use with `pre-commit run`
-* [terraform 0.14.7](https://releases.hashicorp.com/terraform/0.14.11/) For backwards compability we are using version 0.14.11 for testing making this the min version tested and without issues with terraform-docs.
+* [terraform 0.14.11](https://releases.hashicorp.com/terraform/0.14.11/) For backwards compatibility we are using version 0.14.11 for testing making this the min version tested and without issues with terraform-docs.
 * [terraform-docs](https://github.com/segmentio/terraform-docs) - Used to generate the [Inputs](#Inputs) and [Outputs](#Outputs) sections
   * Install with `brew install terraform-docs`
   * Manually use via pre-commit
