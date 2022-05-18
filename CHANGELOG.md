@@ -18,6 +18,7 @@ Here we have merged both ECR private and public module to one.
 - `CODEOWNERS` file
 - PR template file
 - README footers
+- Makefile to test examples.
 
 ### Changed
 

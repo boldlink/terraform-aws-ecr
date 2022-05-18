@@ -4,7 +4,7 @@
 
 ## Description
 
-This module creates an Elastic Container Registry Repository.
+This sub-module creates a private ECR Repository.
 
 Example available [here](https://github.com/boldlink/terraform-aws-ecr/tree/main/examples)
 ## Documentation
