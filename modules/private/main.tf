@@ -58,12 +58,12 @@ resource "aws_ecr_registry_scanning_configuration" "this" {
       scan_frequency = "SCAN_ON_PUSH"
 
       repository_filter {
-        filter      = lookup(repository_filter.value, "filter", "*")
-        filter_type = lookup(repository_filter.value, "filter_type", "WILDCARD")
+        filter      = lookup(repository_filter.value, "filter")
+        filter_type = lookup(repository_filter.value, "filter_type")
       }
     }
   }
-
+  /*
   dynamic "rule" {
     for_each = var.continuous_scan_filters
     content {
@@ -75,7 +75,7 @@ resource "aws_ecr_registry_scanning_configuration" "this" {
       }
     }
   }
-
+*/
 }
 
 #  Pull through cache rule
