@@ -1,9 +1,8 @@
 
 locals {
-  name       = "example-complete-repository"
+  name       = ["example-complete-repository", ]
   partition  = data.aws_partition.current.partition
   account_id = data.aws_caller_identity.current.account_id
-  region     = data.aws_region.current.name
   tagged_images = [
     {
       rulePriority = 1,
@@ -38,8 +37,6 @@ locals {
 
 data "aws_caller_identity" "current" {}
 
-data "aws_region" "current" {}
-
 data "aws_partition" "current" {}
 
 
@@ -53,19 +50,11 @@ module "kms_key" {
 }
 
 module "private_ecr" {
-  source                           = "./../../"
-  create_private_repository        = true
-  name                             = local.name
-  image_tag_mutability             = "IMMUTABLE"
-  create_replication_configuration = true
-  scan_type                        = "ENHANCED"
-  enable_pull_through_cache_rule   = true
-  ecr_repository_prefix            = "ecr-public"
-  upstream_registry_url            = "public.ecr.aws"
-  replica_region                   = "eu-west-2"
-  create_aws_ecr_repository_policy = true
-  create_aws_ecr_lifecycle_policy  = true
-  registry_id                      = local.account_id
+  for_each                  = toset(local.name)
+  source                    = "./../../"
+  create_private_repository = true
+  name                      = each.value
+  image_tag_mutability      = "IMMUTABLE"
   encryption_configuration = {
     encryption_type = "KMS"
     kms_key         = module.kms_key.arn
@@ -104,23 +93,4 @@ module "private_ecr" {
     ]
 }
 EOF
-  registry_policy = jsonencode({
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Sid    = "testpolicy",
-        Effect = "Allow",
-        Principal = {
-          "AWS" : "arn:${local.partition}:iam::${local.account_id}:root"
-        },
-        Action = [
-          "ecr:ReplicateImage"
-        ],
-        Resource = [
-          "arn:${local.partition}:ecr:${local.region}:${local.account_id}:repository/*"
-        ]
-      }
-    ]
-  })
-
 }

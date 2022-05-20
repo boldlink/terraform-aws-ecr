@@ -22,6 +22,8 @@ Here we have merged both ECR private and public module to one.
 
 ### Changed
 
+- Refactored private ECR sub-module to only have local settings
+  Those that have global settings to move to a separate module.
 - ECR private module to sub-module
 - Terraform file to versions file
 - Testing terraform binary to version `0.14.11`
