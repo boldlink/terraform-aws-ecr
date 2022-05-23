@@ -6,6 +6,7 @@ module "private" {
   encryption_configuration  = var.encryption_configuration
   aws_ecr_lifecycle_policy  = var.aws_ecr_lifecycle_policy
   aws_ecr_repository_policy = var.aws_ecr_repository_policy
+  scan_on_push              = var.scan_on_push
   other_tags                = var.other_tags
 }
 

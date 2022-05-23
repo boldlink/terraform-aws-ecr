@@ -25,7 +25,7 @@ tfapply:
 		cd $$folder ;\
 		terraform plan --out=plan.tmp ;\
 		terraform apply plan.tmp ;\
-		rm plan.out ;\
+		rm plan.tmp ;\
 	done
 
 tfdestroy:

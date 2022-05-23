@@ -3,11 +3,14 @@ resource "aws_ecr_repository" "this" {
   count                = var.create_private_repository ? 1 : 0
   name                 = var.name
   image_tag_mutability = var.image_tag_mutability
+  image_scanning_configuration {
+    scan_on_push = var.scan_on_push
+  }
 
   dynamic "encryption_configuration" {
-    for_each = var.encryption_configuration != null ? [var.encryption_configuration] : []
+    for_each = [var.encryption_configuration]
     content {
-      encryption_type = encryption_configuration.value.encryption_type
+      encryption_type = "KMS"
       kms_key         = encryption_configuration.value.kms_key
     }
   }

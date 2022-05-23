@@ -5,6 +5,12 @@ variable "create_private_repository" {
   default     = false
 }
 
+variable "scan_on_push" {
+  description = "(Required) Indicates whether images are scanned after being pushed to the repository (true) or not scanned (false)."
+  default     = true
+  type        = bool
+}
+
 variable "name" {
   description = "(Required) Name of the repository."
   type        = string
@@ -13,7 +19,7 @@ variable "name" {
 variable "encryption_configuration" {
   description = "(Optional) Encryption configuration for the repository. "
   default = {
-    encryption_type = null
+    encryption_type = "KMS"
     kms_key         = null
   }
   type = object({

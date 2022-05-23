@@ -64,6 +64,7 @@ No resources.
 | <a name="input_name"></a> [name](#input\_name) | (Required) Name of the repository. | `string` | n/a | yes |
 | <a name="input_other_tags"></a> [other\_tags](#input\_other\_tags) | Any additional values for tags | `map(string)` | `{}` | no |
 | <a name="input_policy"></a> [policy](#input\_policy) | (Required) The policy document. This is a JSON formatted string. | `string` | `""` | no |
+| <a name="input_scan_on_push"></a> [scan\_on\_push](#input\_scan\_on\_push) | (Required) Indicates whether images are scanned after being pushed to the repository (true) or not scanned (false). | `bool` | `true` | no |
 | <a name="input_timeouts"></a> [timeouts](#input\_timeouts) | aws\_ecrpublic\_repository provides the following Timeouts configuration options:delete | `map(any)` | `{}` | no |
 
 ## Outputs

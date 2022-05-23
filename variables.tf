@@ -5,6 +5,12 @@ variable "create_private_repository" {
   default     = false
 }
 
+variable "scan_on_push" {
+  description = "(Required) Indicates whether images are scanned after being pushed to the repository (true) or not scanned (false)."
+  default     = true
+  type        = bool
+}
+
 variable "name" {
   description = "(Required) Name of the repository."
   type        = string
