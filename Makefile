@@ -41,6 +41,9 @@ tfclean:
 		rm -rf $$folder/.terraform* ;\
 	done
 
+tfmoduleclean:
+	rm -rf .terraform* ;\
+
 tests: tfinit tfapply
 
-clean: tfdestroy tfclean
+clean: tfdestroy tfclean tfmoduleclean
