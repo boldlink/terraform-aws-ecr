@@ -50,4 +50,11 @@ This repository uses third party software:
   * Install with `brew install tflint`
   * Manually use via pre-commit
 
+### Makefile
+The makefile contain in this repo is optimized for linux paths and the main purpose is to execute testing for now.
+* Create all tests:
+`$ make tests`
+* Clean all tests:
+`$ make clean`
+
   #### BOLDLink-SIG 2022

@@ -25,7 +25,7 @@ Example available [here](https://github.com/boldlink/terraform-aws-ecr/tree/main
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.15.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.15.1 |
 
 ## Modules
 
@@ -47,11 +47,9 @@ No modules.
 | <a name="input_aws_ecr_repository_policy"></a> [aws\_ecr\_repository\_policy](#input\_aws\_ecr\_repository\_policy) | (Required) The policy document. This is a JSON formatted string. | `string` | `""` | no |
 | <a name="input_create_private_repository"></a> [create\_private\_repository](#input\_create\_private\_repository) | Whether to create a private repository or not. | `bool` | `false` | no |
 | <a name="input_encryption_configuration"></a> [encryption\_configuration](#input\_encryption\_configuration) | (Optional) Encryption configuration for the repository. | <pre>object({<br>    encryption_type = string<br>    kms_key         = any<br>  })</pre> | <pre>{<br>  "encryption_type": null,<br>  "kms_key": null<br>}</pre> | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | Environment tag, e.g prod, test | `string` | `null` | no |
 | <a name="input_image_tag_mutability"></a> [image\_tag\_mutability](#input\_image\_tag\_mutability) | (Optional) The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE. | `string` | `"IMMUTABLE"` | no |
 | <a name="input_name"></a> [name](#input\_name) | (Required) Name of the repository. | `string` | n/a | yes |
 | <a name="input_other_tags"></a> [other\_tags](#input\_other\_tags) | Any additional values for tags | `map(string)` | `{}` | no |
-| <a name="input_scan_on_push"></a> [scan\_on\_push](#input\_scan\_on\_push) | (Required) Indicates whether images are scanned after being pushed to the repository (true) or not scanned (false). | `bool` | `true` | no |
 
 ## Outputs
 
@@ -75,5 +73,12 @@ This repository uses third party software:
 * [tflint](https://github.com/terraform-linters/tflint) - Used to lint the Terraform code
   * Install with `brew install tflint`
   * Manually use via pre-commit
+
+### Makefile
+The makefile contain in this repo is optimized for linux paths and the main purpose is to execute testing for now.
+* Create all tests:
+`$ make tests`
+* Clean all tests:
+`$ make clean`
 
   #### BOLDLink-SIG 2022

@@ -4,6 +4,7 @@ variable "create_private_repository" {
   type        = bool
   default     = false
 }
+
 variable "name" {
   description = "(Required) Name of the repository."
   type        = string
@@ -27,24 +28,11 @@ variable "image_tag_mutability" {
   type        = string
 }
 
-variable "scan_on_push" {
-  description = "(Required) Indicates whether images are scanned after being pushed to the repository (true) or not scanned (false)."
-  default     = true
-  type        = bool
-}
-
-variable "environment" {
-  description = "Environment tag, e.g prod, test"
-  type        = string
-  default     = null
-}
-
 variable "other_tags" {
   description = " Any additional values for tags"
   type        = map(string)
   default     = {}
 }
-
 
 variable "aws_ecr_repository_policy" {
   description = "(Required) The policy document. This is a JSON formatted string."

@@ -4,10 +4,12 @@ variable "create_public_repository" {
   type        = bool
   default     = false
 }
+
 variable "repository_name" {
   description = "(Required) Name of the repository."
   type        = string
 }
+
 variable "catalog_data" {
   description = "(Optional) Catalog data configuration for the repository. "
   type        = any

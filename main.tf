@@ -3,11 +3,9 @@ module "private" {
   create_private_repository = var.create_private_repository
   name                      = var.name
   image_tag_mutability      = var.image_tag_mutability
-  scan_on_push              = var.scan_on_push
   encryption_configuration  = var.encryption_configuration
   aws_ecr_lifecycle_policy  = var.aws_ecr_lifecycle_policy
   aws_ecr_repository_policy = var.aws_ecr_repository_policy
-  environment               = var.environment
   other_tags                = var.other_tags
 }
 

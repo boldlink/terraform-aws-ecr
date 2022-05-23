@@ -13,7 +13,7 @@ variable "name" {
 variable "encryption_configuration" {
   description = "(Optional) Encryption configuration for the repository. "
   default = {
-    encryption_type = "AES256"
+    encryption_type = "KMS"
     kms_key         = null
   }
   type = object({
@@ -26,18 +26,6 @@ variable "image_tag_mutability" {
   description = "(Optional) The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE."
   default     = "IMMUTABLE"
   type        = string
-}
-
-variable "scan_on_push" {
-  description = "(Required) Indicates whether images are scanned after being pushed to the repository (true) or not scanned (false)."
-  default     = true
-  type        = bool
-}
-
-variable "environment" {
-  description = "Environment tag, e.g prod, test"
-  type        = string
-  default     = null
 }
 
 variable "other_tags" {

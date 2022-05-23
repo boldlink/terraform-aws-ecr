@@ -27,4 +27,4 @@ See the [CHANGELOG](./../tree/<BRANCH-NAME>/CHANGELOG.md) for a list of all upda
 * [ ] Are all your comments/changes resolved?
 * [ ] Are you happy with the OWNER checklists and additional information provided?
 * [ ] Does your review tests pass?
-    * [ ] Terraform resources examples build/destroy successfully with Terraform 0.13.7 minimum?
+    * [ ] Terraform resources examples build/destroy successfully with Terraform 0.14.11 minimum?

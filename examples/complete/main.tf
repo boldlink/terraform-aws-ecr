@@ -1,45 +1,4 @@
 
-locals {
-  name       = ["example-complete-repository", ]
-  partition  = data.aws_partition.current.partition
-  account_id = data.aws_caller_identity.current.account_id
-  tagged_images = [
-    {
-      rulePriority = 1,
-      description  = "Keep last 10 images",
-      selection = {
-        tagStatus     = "tagged",
-        tagPrefixList = ["v"],
-        countType     = "imageCountMoreThan",
-        countNumber   = 10
-      },
-      action = {
-        type = "expire"
-      }
-    }
-  ]
-  untagged_images = [
-    {
-      rulePriority = 2,
-      description  = "Expire images older than 5 days",
-      selection = {
-        tagStatus   = "untagged",
-        countType   = "sinceImagePushed",
-        countUnit   = "days",
-        countNumber = 5
-      },
-      action = {
-        type = "expire"
-      }
-    }
-  ]
-}
-
-data "aws_caller_identity" "current" {}
-
-data "aws_partition" "current" {}
-
-
 module "kms_key" {
   source              = "boldlink/kms/aws"
   version             = "1.0.0"
@@ -50,47 +9,14 @@ module "kms_key" {
 }
 
 module "private_ecr" {
-  for_each                  = toset(local.name)
   source                    = "./../../"
   create_private_repository = true
-  name                      = each.value
+  name                      = local.name
   image_tag_mutability      = "IMMUTABLE"
+  aws_ecr_lifecycle_policy  = local.lifecycle_policy
+  aws_ecr_repository_policy = local.repository_policy
   encryption_configuration = {
     encryption_type = "KMS"
     kms_key         = module.kms_key.arn
   }
-
-  aws_ecr_lifecycle_policy = jsonencode({
-    rules = concat(local.tagged_images, local.untagged_images)
-  })
-  aws_ecr_repository_policy = <<EOF
-{
-    "Version": "2008-10-17",
-    "Statement": [
-        {
-            "Sid": "new policy",
-            "Effect": "Allow",
-            "Principal": {
-              "AWS" : "arn:${local.partition}:iam::${local.account_id}:root"
-            },
-            "Action": [
-                "ecr:GetDownloadUrlForLayer",
-                "ecr:BatchGetImage",
-                "ecr:BatchCheckLayerAvailability",
-                "ecr:PutImage",
-                "ecr:InitiateLayerUpload",
-                "ecr:UploadLayerPart",
-                "ecr:CompleteLayerUpload",
-                "ecr:DescribeRepositories",
-                "ecr:GetRepositoryPolicy",
-                "ecr:ListImages",
-                "ecr:DeleteRepository",
-                "ecr:BatchDeleteImage",
-                "ecr:SetRepositoryPolicy",
-                "ecr:DeleteRepositoryPolicy"
-            ]
-        }
-    ]
-}
-EOF
 }

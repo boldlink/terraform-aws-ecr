@@ -27,7 +27,7 @@ This sub-module Provides a Public Elastic Container Registry Repository.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.15.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.15.1 |
 
 ## Modules
 
@@ -73,5 +73,12 @@ This repository uses third party software:
 * [tflint](https://github.com/terraform-linters/tflint) - Used to lint the Terraform code
   * Install with `brew install tflint`
   * Manually use via pre-commit
+
+### Makefile
+The makefile contain in this repo is optimized for linux paths and the main purpose is to execute testing for now.
+* Create all tests:
+`$ make tests`
+* Clean all tests:
+`$ make clean`
 
   #### BOLDLink-SIG 2022
