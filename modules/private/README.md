@@ -31,7 +31,7 @@ Example available [here](https://github.com/boldlink/terraform-aws-ecr/tree/main
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.17.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.48.0 |
 
 ## Modules
 
