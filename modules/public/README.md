@@ -1,4 +1,10 @@
+[![Build Status](https://github.com/boldlink/terraform-aws-ecr/actions/workflows/update.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-ecr/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-ecr/actions/workflows/release.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-ecr/actions)
 [![Build Status](https://github.com/boldlink/terraform-aws-ecr/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/boldlink/terraform-aws-ecr/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-ecr/actions/workflows/pre-commit.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-ecr/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-ecr/actions/workflows/pr-labeler.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-ecr/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-ecr/actions/workflows/checkov.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-ecr/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-ecr/actions/workflows/auto-badge.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-ecr/actions)
 
 [<img src="https://avatars.githubusercontent.com/u/25388280?s=200&v=4" width="96"/>](https://boldlink.io)
 
@@ -27,7 +33,7 @@ This sub-module Provides a Public Elastic Container Registry Repository.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.17.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.48.0 |
 
 ## Modules
 
