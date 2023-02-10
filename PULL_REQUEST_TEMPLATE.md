@@ -1,10 +1,10 @@
 # Description
 
-lorem ipsum lorem ipsum lorem
+lorem ipsum lorem ipsum lorem ipsum lorem
 
 ## Features/Fixes/Patches/Changes list:
 
-See the [CHANGELOG](./../tree/<BRANCH-NAME>/CHANGELOG.md) for a list of all updates in this PR.
+Please check the [CHANGELOG.md](https://github.com/boldlink/<REPOSITORY>/blob/<BRANCH/COMMIT_HASH>/CHANGELOG.md#<VERSION_WITHOUT_DOTS>---<DATE>)
 
 ## Checklists:
 <!-- You can erase any parts of this template not applicable to your Pull Request. -->
@@ -17,7 +17,7 @@ See the [CHANGELOG](./../tree/<BRANCH-NAME>/CHANGELOG.md) for a list of all upda
 * [ ] OWNER: Does your submission pass?
     * [ ] Pre-commit (attach logs/print screen to this PR)
     * [ ] Checkov/terrascan (attach logs/print screen to this PR)
-    * [ ] Terraform resources examples build/destroy successfully with Terraform 0.13.7 minimum?
+    * [ ] Terraform resources examples build/destroy successfully with Terraform 0.14.11 minimum?
 * [ ] Have you added an explanation of what your changes do and why you'd like us to include them?
 * [ ] Have you written new tests for your core changes, as applicable?
 * [ ] Have you successfully run tests with your changes locally?
