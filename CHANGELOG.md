@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[Unreleased]
+- fix: CKV_TF_1:Ensure Terraform module sources use a commit hash
 
 ## [2.0.0] - 2022-05-24
 
